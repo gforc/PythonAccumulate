@@ -1,8 +1,7 @@
 
 
 
-# API
-## urllib.parse.quote(question)
+# urllib.parse.quote(question)
 
 将字符串转化为url能识别的字符串格式
 ```

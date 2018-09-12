@@ -5,12 +5,12 @@
 通过urllib打开网页
 ```
 from url import requeset
-pattern = re.compile('<tt>(\d+_\d+-\d+)/</tt>')      
+pattern = re.compile('<tt>(\d+_\d+-\d+)/</tt>')       #设置re正则表达式过滤的规则
 f = request.urlopen('http://172.21.111.41:8080/utopia/daily_builds/')
-for line in f.readlines():
-    if time.strftime('%Y%m%d') in line.decode():
+for line in f.readlines():                             #可以通过readlines()一行行读出来
+    if time.strftime('%Y%m%d') in line.decode():       #get到的html需要decode以后才能操作
     
-        dailyName = pattern.findall(line.decode())[0]
+        dailyName = pattern.findall(line.decode())[0]   # 利用pattern.findall()过滤想要的东西
         print(dailyName)
         break
 ```

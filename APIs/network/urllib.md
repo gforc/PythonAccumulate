@@ -15,6 +15,11 @@ for line in f.readlines():                             #可以通过readlines()�
         break
 ```
 
+# request.urlretrieve()
+通过此方法下载网页中的可下载文件
+request.urlretrieve(url, filename)
+
+
 # urllib.parse.quote(question)
 
 将字符串转化为url能识别的字符串格式

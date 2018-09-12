@@ -1,7 +1,7 @@
 
 
 
-# request.urlopen
+# request.urlopen（url）
 通过urllib打开网页
 ```
 from url import requeset
@@ -15,7 +15,7 @@ for line in f.readlines():                             #可以通过readlines()�
         break
 ```
 
-# request.urlretrieve()
+# request.urlretrieve(url,filename)
 通过此方法下载网页中的可下载文件
 request.urlretrieve(url, filename)
 

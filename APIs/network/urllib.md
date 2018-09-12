@@ -1,6 +1,20 @@
 
 
 
+# request.urlopen
+通过urllib打开网页
+```
+from url import requeset
+pattern = re.compile('<tt>(\d+_\d+-\d+)/</tt>')      
+f = request.urlopen('http://172.21.111.41:8080/utopia/daily_builds/')
+for line in f.readlines():
+    if time.strftime('%Y%m%d') in line.decode():
+    
+        dailyName = pattern.findall(line.decode())[0]
+        print(dailyName)
+        break
+```
+
 # urllib.parse.quote(question)
 
 将字符串转化为url能识别的字符串格式

@@ -16,10 +16,7 @@ import sys
 sys.path.append('C:/001Work/001Automation/svn/QualityAnalyzer_local1/')
 ```
 
-# os
-```
-PWD = os.getcwd()
-```
+
 # platform
 ```
 local_platform = platform.system()

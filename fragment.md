@@ -72,3 +72,15 @@ Python中可以用如下方式表示正负无穷：
 ```
 float("inf"), float("-inf")
 ```
+
+
+# 判读字典key是否为空
+## python2  
+```
+dict.has_key('keyname')
+```
+## python3 
+```
+dict.__contains__(chr)              
+```                
+         

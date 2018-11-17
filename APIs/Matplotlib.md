@@ -4,11 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-# plt.plot
+# plt.plot 线状图
 1. 原则上plt.plot绘图需要x轴和y轴信息，但是当传入的y轴数据是dnarray是，x轴会自动取值range(len(y)), 所有没必要再提供x轴信息
 2. 一般来说，讲二维数组传递给plt.plot时，它会自动把包含的数据解释为单独的数据集（沿着Y轴，即第二维）
 
-# plt.bar
+# plt.bar 柱状图
 1. plt.bar 用于画出柱状图
 2. 必须提供X轴、Y轴的数据
 ```
@@ -55,6 +55,31 @@ def book512():
 book512()  
 ```
 
+# plt.hist 离散点
+```
+def book513_2():
+    y = np.random.standard_normal((100,2))
+#    y = np.array([[1,2,3,4,5,6], [11,12,13,14,15,16]])    
+#    y = np.array([[1,2],[3,4],[5,6],[7,8],[9,10],[1,2],[3,4]])
+    plt.figure(figsize= (10,8))
+    plt.subplot(121)
+    plt.hist(y, label=['1st','2nd'],bins =10)
+    plt.grid(True)
+    plt.legend(loc=0)
+    plt.xlabel('value')
+    plt.ylabel('frequency')
+    
+    plt.subplot(122)
+    plt.hist(y,label=['1st','2nd'],bins = 10, color=['b','g'], stacked=True)
+    plt.grid(True)
+    plt.legend(loc=0)
+    plt.xlabel('value')
+    plt.xlabel('frequency')
+    plt.title('Histogram')
+     
+    plt.show()
+    
+```
 
 
 

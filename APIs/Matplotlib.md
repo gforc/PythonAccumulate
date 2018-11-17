@@ -54,3 +54,37 @@ def book512():
   
 book512()  
 ```
+
+
+
+
+# 求函数面积
+```
+def book513_4():
+    a, b = 0.5, 1.5
+    x= np.linspace(0,2)# linespace 产生等差数列，从0到2产生50（default）个元素
+    y = func(x)
+    
+    fig, ax = plt.subplots(figsize=(7,5))
+    plt.plot(x,y,'b', linewidth=2)
+    plt.ylim(ymin=0)
+    
+    Ix = np.linspace(a,b)
+    Iy = func(Ix)
+    verts = [(a,0)]+list(zip(Ix,Iy)) + [(b,0)]  ##确定多边形的几个顶点
+    poly = Polygon(verts, facecolor='0.7', edgecolor='0.5')  ##多边形函数polygon
+    ax.add_patch(poly)
+    
+    plt.text(0.5*(a+b),1,r"$\int_a^b f(x)\mathrm{d}x$", horizontalalignment='center', fontsize=20) #图中显示文本的坐标（0.5*(a+b),1）和内容，此处的坐标是坐标轴的坐标
+    plt.figtext(0.9, 0.075, '$x$') #图中显示文本的坐标（0.9，0.075）和内容，此处的坐标是相对figure的坐标
+    plt.figtext(0.075,0.9,'$f(x)$')
+    
+    ax.set_xticks((a,b))  #设置x轴刻度位置
+    ax.set_xticklabels(('$a$', '$b$')) #设置x轴刻度名称
+    ax.set_yticks([func(a),func(b)])  #设置y轴刻度位置
+    ax.set_yticklabels(('$f(a)$','$f(b)$'))#设置y轴刻度名称
+    plt.grid(True)
+    
+    plt.show()
+```
+

@@ -28,12 +28,12 @@ def book512():
     y = np.random.standard_normal((20,2)).cumsum(axis=0)
 #    y = np.array([[1,2,3,4,5,6], [11,12,13,14,15,16]])
 #   y = np.array([[1],[2],[3],[4],[5],[6])
-    plt.figure(figsize = (9,4))
-    plt.subplot(121)
-    plt.plot(y[:,0],'b', label='1st') #先画上线，label是图例的命令
+    plt.figure(figsize = (9,4)) #制定图表大小
+    plt.subplot(121) #设置子图的位置 plt.subplot(总行数，总列数，子图编号)
+    plt.plot(y[:,0],'b', label='1st') #先画上线，label是图例的名称
     plt.plot(y[:,0],'ro')  #再画上红点
-    plt.grid(True)
-    plt.legend(loc=0)
+    plt.grid(True) #enable 网格
+    plt.legend(loc=0) # 设置图例，0表示最佳位置
     plt.axis('tight')
     plt.xlabel('index')
     plt.ylabel('value')

@@ -34,3 +34,28 @@ round(80.23456, 2) : 80.23
 round(100.000056, 3) : 100.0 
 round(-100.000056, 3) : -100.0
 ```
+
+# Python collections
+https://blog.csdn.net/liufang0001/article/details/54618484
+## defaultdict() 
+### defaultdict() 与 dict 区别
+1. defaultdict()创建字典性能比 dict更高
+2. 如果方法字典的value是空时，dict方式创建的字典会抛出KeyError异常的；defaultdict()方式可以利用工厂函数，给初始key带来一个默认值。这个默认值也许是空的list[]  defaultdict(list), 也许是0, defaultdict(int).  
+```
+mport collections
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+# defaultdict
+d = collections.defaultdict(list)
+for k, v in s:
+    d[k].append(v)
+# Use dict and setdefault   
+g = {}
+for k, v in s:
+    g.setdefault(k, []).append(v)
+      
+# Use dict
+e = {}
+for k, v in s:
+    e[k] = v
+```
+

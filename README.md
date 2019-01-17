@@ -110,9 +110,33 @@ for k, v in s:
 
 ## String
 
-### ''.join(result).lstrip('0')[:-k or None] or '0'
-此代码
+### 代码分析： ''.join(result).lstrip('0')[:-k or None] or '0'
+此代码分两段''.join(result).lstrip('0')[:-k or None] 和 ’0‘
+''.join(result).lstrip('0')[:-k or None] 从左到右开始执行：  
+''.join(result)将字符数组合并成字符串，lstrip('0')然后删除字符串左边所有的字符’0‘，[:-k or None]然后对字符串进行切割。  
+[:-k or None]很重要，执行顺序是：先做判读’-k or None‘，当-k为零时，取None；-k非零时，取值-k。然后再进行切片。[:-k]很简单，大家都知道；[:None]表示不对字符串进行切片，取整个字符串的值。  
+然后当''.join(result).lstrip('0')[:-k or None]的值为None时，取值’0‘
 
+’‘’
+class Solution(object):
+    def removeKdigits(self, num, k):
+        result = []
+        for d in num:
+            while k and result and result[-1] > d:
+                result.pop()
+                k -= 1
+            result.append(d)
+        print(''.join(result).lstrip('0'))
+        print(''.join(result).lstrip('0')[: -100 or None] or '0')
+        print(''.join(result).lstrip('0')[:-k or None] or '0')        
+        return ''.join(result).lstrip('0')[:-k or None] or '0'
+ 
+if __name__ == '__main__':    
+    num = "1432219"
+    num2 = '0001000200'
+    k = 1
+    Solution().removeKdigits(num, k)
+‘’‘
 
 # Python knowlege segments
 ## Import

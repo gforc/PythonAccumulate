@@ -117,7 +117,7 @@ for k, v in s:
 [:-k or None]很重要，执行顺序是：先做判读’-k or None‘，当-k为零时，取None；-k非零时，取值-k。然后再进行切片。[:-k]很简单，大家都知道；[:None]表示不对字符串进行切片，取整个字符串的值。  
 然后当''.join(result).lstrip('0')[:-k or None]的值为None时，取值’0‘
 
-’‘’
+’‘’  
 class Solution(object):
     def removeKdigits(self, num, k):
         result = []
@@ -135,7 +135,7 @@ if __name__ == '__main__':
     num = "1432219"
     num2 = '0001000200'
     k = 1
-    Solution().removeKdigits(num, k)
+    Solution().removeKdigits(num, k)  
 ‘’‘
 
 # Python knowlege segments

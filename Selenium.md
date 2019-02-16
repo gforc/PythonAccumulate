@@ -27,10 +27,12 @@ ID定位是最快速最准确的，但实际上需要开发人员的友好配合
 # className不允许使用复合类名做参数
 
    真实环境中元素往往使用复合类名(即多个class用空格分隔)，使用className定位时要注意了，className的参数只能是一个class。
-
+'''  
 　　例如，打开http://hao.360.cn/，我们要使用className定位这个元素
 
 <a class="tab-item news" data-page="http://sh.qihoo.com/daohang/index1.html" hidefocus="false"href="./brother.html#!news">新闻头条</a>
+'''
+
 　　1）执行driver.findElements(by.className("news")),成功定位到元素
 
 　　2）执行driver.findElements(by.className("tab-item news")),定位失败，报错信息：Compound class names not permitted，意思是不允许使用复合类名称
@@ -42,10 +44,10 @@ ID定位是最快速最准确的，但实际上需要开发人员的友好配合
 　　遇到文字链接元素，首先考虑使用linkText定位，那它与partialLinkText有什么区别与特性呐？
 
 　　1) linkText=链接文字，表示精准匹配链接文字；partialLinkText=部分链接文字，表示模糊匹配链接文字。例如定位一下元素
-
+'''  
 <a target="_blank" title="" href="http://www.nuomi.com/?cid=bdsywzl">劳动节不劳动，吃喝玩乐5.1元起！</a>
  
-
+'''  
 　　　　| driver.findElement(By.linkText("劳动节不劳动，吃喝玩乐5.1元起！"));
 
 　　　　| driver.findElement(By.partialLinkText("吃喝玩乐"));

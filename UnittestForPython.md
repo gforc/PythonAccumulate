@@ -1,5 +1,5 @@
 
-# setUp() and tearDwon
+# setUp() and tearDwon()
 
 setUp和tearDown会在执行每一个def函数的时候都执行一遍；所有当有多个def在一个class种是，setUp和tearDown会执行多遍
 

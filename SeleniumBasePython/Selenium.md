@@ -55,4 +55,29 @@ ID定位是最快速最准确的，但实际上需要开发人员的友好配合
 　　2.都对大小写敏感
 
  
+ 
+ #Xpath 中添加参数
+ 
+ ```
+ # encoding:utf-8
+from selenium import webdriver
+import time
+driver = webdriver.Firefox()
+driver.get("http://www.baidu.com")
+
+# 下面这一段使用的是python中变量的方法，简单吧！
+def enter(var):
+    driver.find_element_by_xpath("//input[@id = '%s']" % var).send_keys("haha")
+enter('kw')
+time.sleep(3)
+
+#下面这一段使用的好像是一种固定格式，在JS中有看到
+def enter1(var1):
+    driver.find_element_by_xpath("//input[@id = '" + var1 + "']").click()
+enter1('su')
+time.sleep(3)
+driver.quit()
+ 
+ ```
+ 
 
